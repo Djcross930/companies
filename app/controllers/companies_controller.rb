@@ -27,4 +27,13 @@ class CompaniesController < ApplicationController
     company.save
     render json: company.as_json
   end
+
+  def destroy
+    company = Company.find_by(id: params[:id])
+    company.destroy
+    render json: {message: "Destroyed"}
+
+  end
+
+
 end
