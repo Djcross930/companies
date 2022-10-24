@@ -19,4 +19,12 @@ class CompaniesController < ApplicationController
     render json: company.as_json
 
   end
+
+  def update
+    company = Company.find_by(id: params[:id])
+    company.name = params[:name] || company.name
+    company.employees = params[:employees] || company.employees
+    company.save
+    render json: company.as_json
+  end
 end
