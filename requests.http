@@ -2,3 +2,13 @@ GET http://localhost:3000/companies
 ###
 
 GET http://localhost:3000/companies/1
+
+###
+
+POST http://localhost:3000/companies
+Content-Type: application/json
+
+{
+  "name": "Google",
+  "employees": 25000
+}
